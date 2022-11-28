@@ -5,9 +5,9 @@ node{
  echo "Jenkins url is:  ${env.JENKINS_URL}"
  echo "Node Name is: ${env.NODE_NAME}"
  echo "Job Name is: ${env.JOB_NAME}"
- */
- properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
  /*
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+ */
  stage('CheckOutCode'){
  git branch: 'development', credentialsId: '5fdac834-72ee-46da-a805-db3688053053', url: 'https://github.com/sushmitharajesh/maven-web-application.git'
  }
@@ -15,11 +15,11 @@ node{
  stage ('Build'){
  sh "${mavenHome}/bin/mvn clean package"
  }
- 
+ /*
  stage ('ExecuteSonarQubeReport'){
  sh "${mavenHome}/bin/mvn clean sonar:sonar"
  }
- 
+
  stage ('UploadArtifactsIntoArtifactRepo'){
  sh "${mavenHome}/bin/mvn clean deploy"
  }
@@ -29,5 +29,5 @@ node{
  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@172.31.45.113:/opt/apache-tomcat-9.0.68/webapps/"
  }    
  }
-
+ */
  }
