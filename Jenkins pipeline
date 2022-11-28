@@ -2,7 +2,7 @@ node{
  
  def mavenHome = tool name: "maven3.8.6"
  
- echo "Jenkins uel is:  ${env.Jenkins_url}"
+ echo "Jenkins url is:  ${env.Jenkins_url}"
  echo "Node Name is: ${env.Node_Name}"
  echo "Job Name is: ${env.Job_Name}"
  
