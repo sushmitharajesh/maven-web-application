@@ -10,7 +10,7 @@ node{
  
  try{
  
- slackNotifications('STARTED')
+ slackNotifications('FAILED')
  
  stage('CheckOutCode'){
  git branch: 'development', credentialsId: '5fdac834-72ee-46da-a805-db3688053053', url: 'https://github.com/sushmitharajesh/maven-web-application.git'
