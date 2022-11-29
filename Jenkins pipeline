@@ -37,7 +37,7 @@ node{
 
  }//try block closing
  catch (e){
- slackNotifications(FAILED)
+ slackNotifications('FAILED')
  throw e
  }
  finally{
